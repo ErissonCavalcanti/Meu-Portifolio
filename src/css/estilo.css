@@ -1,217 +1,210 @@
-html {
-  color: #fff;
-  scroll-behavior: smooth;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body {
-  font-family: "Poppins", sans-serif;
-  margin: 0 auto;
-  max-width: 1120px;
-  background:  radial-gradient(circle at center center, rgb(23,53,26),rgb(8, 8, 8));
-  background-size: 120% 120%;
+body{
+    background-color: #1a1a1a;
+    font-family: "DM Sans", sans-serif;
 }
 
-.cabecalho {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 30px 15px;
+.nome{
+    display: flex;
+    max-height: 40px;
+    position: absolute;
+    left: 10%;
 }
 
-.cabecalho .logo {
-  width: 65px;
-  height: 65px;
-  border-radius: 50%;
-  border: 2px solid #fff;
-  text-decoration: underline;
-  text-align: center;
-  line-height: 55px;
-  font-family: "Raleway", sans-serif;
-  transition: 0.2s;
+header {
+    display: flex;
+    margin: 30px;
+    justify-content: end;
 }
 
-.cabecalho a:hover .logo {
-  color:  #00eea2;
-  border: 2px solid  #00eea2;
+nav, a{
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 25%;
+    left: -15%;
+    gap: 30px;
+    margin: 0 ;
+    font-size: 1em;  
+    text-decoration: none;
+
 }
 
-.cabecalho .menu li a {
-  font-size: 20px;
-  text-transform: capitalize;
-  padding: 10px 20px;
-  transition: 0.2s;
-}
-
-.cabecalho .menu li a:hover {
-  background-color: #00eea2;
-  color: rgb(23,53,26);
-  border-radius: 50px;
+h2 {
+    font-size: 30px;
+    color: #fff;
+    padding: 0 10px;
+    flex-grow: 1; 
 }
 
 .home {
-  display: flex;
-  min-height: calc(100vh - 125px);
-  align-items: center;
-  gap: 50px;
-  justify-content: space-between;
+    display: flex;
+   
+    margin-left: 10%;
+    justify-content: space-between;
+    max-width: 100%;
+    max-height: 100vh;
 }
 
-.home .informacoes {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  letter-spacing: 2px;
-  padding: 0 15px;
-  max-width: 50%;
+h1{
+    color: #fff;
+    font-size: 4vmax;
+    line-height: 110%;
+    margin-bottom: 1rem;
+   
+
 }
 
-.home .informacoes h1 {
-  font-family: "Raleway", sans-serif;
-  font-size: 36px;
-  margin-bottom: 20px;
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------- seção animada redes sociais-------------*/
+.img-animada{
+    position: relative;
+    right: 3%;
+    top: 15%;
 }
 
-.home .informacoes p {
-  font-family: "Raleway", sans-serif;
-  font-size: 24px;
-  margin-bottom: 20px;
+ul{
+   
+    display: flex;
+    position: relative;
+    gap: 40px;
+    list-style-type:none ;
 }
 
-.home .redes-sociais {
-  display: flex;
-  gap: 20px;
+ul li {
+    width: 50px;
+    height: 50px;
+    background-color:#1a1a1a;
+    box-shadow: 0 8px 25px #00000055;
+    border-radius: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: .2s;
+    top: -15px;
 }
 
-.home .redes-sociais a i {
-  border: 1px solid #fff;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  padding: 10px;
-  text-align: center;
-  font-size: 26px;
-  transition: 0.3s;
+ul li:hover{
+    width: 130px;
 }
 
-.home .redes-sociais a i:hover {
-  color:  #00eea2;
-  border: 1px solid  #00eea2;
-  transform: scale(1.1);
+ul li span{
+    position: absolute;
+   
 }
 
-.home .container-foto .foto {
-  max-width: 450px;
-  border-radius: 50%;
+ul li .icon{
+    color: #ccc;
+    font-size: 1.6em;
+    transition: .2s;
 }
 
-.home .container-foto img {
-  width: 100%;
-  border-radius: 50%;
+ul li .text{
+    color: #fff;
+    font-size: 17px;
+    transform: scale(0);
+    transition: .2s;
+    transition-delay: .1s;
 }
 
-.home .foto.sombra-interna {
-  background: linear-gradient(to right, rgb(23,53,26), #18c063, #00eea2);
+ul li:hover .text{
+    transform: scale(1);
+    }
 
-  background-size: 180% 180%;
-  animation: gradient-animation 5s ease infinite;
-}
-.projetos {
-  padding: 70px 0 70px;
-}
 
-.projetos .titulo {
-  text-align: center;
-  padding: 60px 0;
-  font-size: 45px;
-  font-weight: 500;
-  text-transform: uppercase;
+ul li:hover .icon{
+    transform: scale(0);
 }
 
-.projetos .container-projetos {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
-  justify-content: center;
+ul li::before{
+    content: '';
+    position: absolute;
+    background-image: linear-gradient(45deg, var(--cor1), var(--cor2));
+    inset: 0;
+    opacity: 0;
+    border-radius: 60px;
 }
 
-.projetos .projeto {
-  max-width: 260px;
-  max-height: 500px;
-  position: relative;
-  display: none;
+ul li:hover::before{
+    opacity: 1;
 }
 
-.projetos .projeto.ativo {
-  display: block;
+/* ---------- seção animada Home-------------*/
+.txt-animado{
+    font-size: 45px;
+    margin-top: 5%;
 }
 
-.projetos .projeto img {
-  height: 100%;
+
+.txt-animado span{
+     position: relative;
 }
 
-.projetos .projeto h3 {
-  background-color: #040203;
-  width: 100%;
-  padding-left: 20px;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  position: absolute;
-  bottom: 0;
+.txt-animado span::before{
+    content: "";
+    color: #fff;
+    animation: titulo 20s infinite;
 }
 
-.projetos .projeto .informacoes-projeto {
-  background-color: #040203;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  font-weight: 600;
-  opacity: 0;
-  transition: 0.3s;
-  padding: 20px;
+.txt-animado span::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    border-left:2px solid green;
+    right: -10px;
+    animation: cursor .8s infinite, digita 25s steps(20) infinite;
+    width: calc(100% + 18px);
+    background-color: #1a1a1a;
 }
 
-.projetos .container-projetos .projeto:hover .informacoes-projeto {
-  opacity: 0.7;
-  background-color: #000;
+@keyframes digita {
+    10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95%{
+        width: 0;
+    }
+    5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85%{
+        width: calc(100% + 18px);
+    }
 }
 
-.projetos .btn-mostrar-projetos {
-  background: none;
-  border: 1px solid #fff;
-  border-radius: 15px;
-  color: #fff;
-  width: 180px;
-  padding: 20px;
-  font-size: 18px;
-  font-weight: 600;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
+@keyframes cursor{
+    0%{
+        border-left:2px solid #000000;
+    }
 }
 
-.projetos .btn-mostrar-projetos:hover {
-  background-color:  #00eea2;
-  transition: 0.3s;
-}
-
-.projetos .btn-mostrar-projetos.remover {
-  display: none;
-}
-
-@keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
+@keyframes titulo{
+    0%,25%{
+        content: "Desenvolvedor Web Front-End";
+    }
+    26%,50%{
+        content: "Front-End Web Developer";
+    }
+    
+    51%,75%{
+        content: "Seja Bem Vindo!";
+    }
+    
+    76%,100%{
+        content: "Welcome!";
+    }
+    
 }
